@@ -16,7 +16,7 @@ $ ng new {project_name} --routing
 $ cd {project_name}
 ```
 
-###  Angular Materialをインストール
+###  [Angular Material](https://material.angular.io/)をインストール
 
 ```
 $ npm install --save @angular/material \
