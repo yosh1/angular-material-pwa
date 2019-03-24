@@ -1,27 +1,81 @@
-# AngularPwa
+# Angular PWA
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
+---
 
-## Development server
+## 手順
+### Angularをグローバルインストール
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+$ npm install -g @angular/cli
+```
 
-## Code scaffolding
+### プロジェクトを作成
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+$ ng new {project_name} --routing
+$ cd {project_name}
+```
 
-## Build
+###  Angular Materialをインストール
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```
+$ npm install --save @angular/material \
+@angular/cdk \
+@angular/animations
+```
 
-## Running unit tests
+### Angular Materialをインポート
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`./src/app/app.module.ts` に
 
-## Running end-to-end tests
+```
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+BrowserAnimationModule,
+[MatButtonModule](https://material.angular.io/components/button/overview)、[MatCheckboxModule](https://material.angular.io/components/checkbox/overview)をインポート。
+ngModuleには
 
-## Further help
+```
+BrowserAnimationsModule,
+MatButtonModule,
+MatCheckboxModule
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+を追加。
+
+### CSSをインポート
+
+`./src/styles.scss` に
+```
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+```
+
+を追加。
+
+[prebuilt-themes](https://material.angular.io/guide/theming#defining-a-custom-theme)から選ぶことも、自分でテーマをビルドすることもできる。
+
+### [Hammer.js](http://hammerjs.github.io/) をインストール
+
+```
+$ npm install --save hammerjs
+```
+
+### Hammer.jsをインポート
+
+これは `./src/app/app.module.ts` ではなく、 `./src/main.ts` に
+
+```
+import 'hammerjs';
+```
+
+を追加。
+
+### マテリアルアイコンを読み込み
+
+`./src/index.html` にMaterial IconをCDNで読み込む。
+
+```:CSS
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+```
