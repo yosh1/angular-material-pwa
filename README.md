@@ -115,3 +115,17 @@ $ npm install normalize.css
 $ ng g c hello --module app.module
 $ ng g c board --module app.module
 ```
+
+なぜ `--module app.module` をつけるかというと、Angular CLIがターゲットのモジュールを自動的に識別できないようにする`material.module`という別のモジュールがあるため。
+
+### Hello.component.html を編集
+
+```
+<div style="text-align:center">
+  <h1>Angular Content Management System</h1>
+  <p>
+    This is a platform for technical writers to manage their blog post contents related to angular.
+    <br> Click on Login to get Started!!!
+  </p>
+</div>
+```
