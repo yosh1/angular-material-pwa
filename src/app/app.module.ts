@@ -7,9 +7,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule, MatSidenavModule, MatToolbarModule, MatIconModule, MatListModule} from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HelloComponent } from './hello/hello.component';
+import { BoardComponent } from './board/board.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HelloComponent,
+    BoardComponent
   ],
   imports: [
     BrowserModule,
