@@ -87,7 +87,10 @@ import 'hammerjs';
 ### Angular Flexboxを追加
 
 ```
-$ npm install @angular/flex-layout rxjs-compat @angular/compiler@7.2.10 ajv@^6.9.1
+$ npm install @angular/flex-layout \
+              rxjs-compat \
+              @angular/compiler@7.2.10 \
+              ajv@^6.9.1
 ```
 
 ### Angular Flexboxを読み込み
