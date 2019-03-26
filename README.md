@@ -2,6 +2,17 @@
 
 ---
 
+## Run
+
+```
+$ git clone {url}
+$ cd {project_dir}
+$ npm install -g @angular/cli
+$ npm install
+$ ng serve
+
+---
+
 ## 使用ライブラリ、フレームワーク
 
 ```
