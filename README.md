@@ -1,4 +1,34 @@
-# Angular PWA
+# Angular
+
+---
+
+## 使用ライブラリ、フレームワーク
+
+```
+
+Package                           Version
+------------------------------------------------
+angular CLI                       7.1.4
+node                              10.11.0
+angular                           7.1.4
+@angular-devkit/architect         0.11.4
+@angular-devkit/build-angular     0.13.6
+@angular-devkit/build-optimizer   0.13.6
+@angular-devkit/build-webpack     0.13.6
+@angular-devkit/core              7.1.4
+@angular-devkit/schematics        7.1.4
+@angular/cdk                      7.3.5
+@angular/compiler                 7.2.10
+@angular/compiler-cli             7.2.10
+@angular/flex-layout              7.0.0-beta.24
+@angular/material                 7.3.5
+@ngtools/webpack                  7.3.6
+@schematics/angular               7.1.4
+@schematics/update                0.11.4
+rxjs                              6.3.3
+typescript                        3.1.6
+webpack                           4.29.0
+```
 
 ---
 
@@ -30,7 +60,14 @@ $ npm install --save @angular/material \
 
 ```
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule, MatSidenavModule, MatToolbarModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatButtonModule,
+         MatCheckboxModule,
+         MatSidenavModule,
+         MatToolbarModule,
+         MatIconModule,
+         MatListModule,
+         MatCardModule,
+         MatTableModule } from '@angular/material';
 ```
 
 BrowserAnimationModule,
@@ -44,7 +81,9 @@ MatCheckboxModule,
 MatSidenavModule,
 MatToolbarModule,
 MatIconModule,
-MatListModule
+MatListModule,
+MatCardModule,
+MatTableModule
 ```
 
 を追加。
@@ -318,3 +357,5 @@ export class PostDataSource extends DataSource<any> {
   }
 }
 ```
+
+
