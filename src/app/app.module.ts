@@ -9,6 +9,7 @@ import { MatButtonModule, MatCheckboxModule, MatSidenavModule, MatToolbarModule,
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HelloComponent } from './hello/hello.component';
 import { BoardComponent } from './board/board.component';
+import {DataService} from './data/data.service';
 
 import {AppRouters} from './app.routes';
 @NgModule({
@@ -30,7 +31,7 @@ import {AppRouters} from './app.routes';
     FlexLayoutModule,
     AppRouters
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
