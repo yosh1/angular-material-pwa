@@ -263,3 +263,58 @@ export class DataService {
 }
 ```
 に置き換える。
+
+### データサービスの確認
+
+データサービスには、2つの異なる配列がある。
+それは、投稿のカテゴリを格納するための配列とブログの投稿を格納するための配列。
+
+また、 `app.module.ts`ファイルの新しいProviderにDataServiceクラスを含まなければならない。
+まずDataServiceをインポートし、
+```
+import {DataService} from './data/data.service';
+```
+
+ngModuleには
+```
+providers: [DataService],
+```
+を追加する。
+
+これでデータサービスを利用してデータを表示、ボードを更新することができる。
+
+`Board.component.ts`を次のコードに置き換える。
+
+```
+import {Component} from '@angular/core';
+import {DataService} from '../data/data.service';
+import {Post} from '../Post';
+import {DataSource} from '@angular/cdk/table';
+import {Observable} from 'rxjs/Observable';
+
+@Component({
+  selector: 'app-board',
+  templateUrl: './board.component.html',
+  styleUrls: ['./board.component.css']
+})
+export class BoardComponent {
+  constructor(private dataService: DataService) {
+  }
+
+  displayedColumns = ['date_posted', 'title', 'category', 'delete'];
+  dataSource = new PostDataSource(this.dataService);
+}
+
+export class PostDataSource extends DataSource<any> {
+  constructor(private dataService: DataService) {
+    super();
+  }
+
+  connect(): Observable<Post[]> {
+    return this.dataService.getData();
+  }
+
+  disconnect() {
+  }
+}
+```
