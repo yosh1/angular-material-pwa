@@ -49,7 +49,7 @@ MatListModule
 
 を追加。
 
-### CSSをインポート
+### SCSSをインポート
 
 `./src/styles.scss` に
 ```
@@ -295,7 +295,7 @@ import {Observable} from 'rxjs/Observable';
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
-  styleUrls: ['./board.component.css']
+  styleUrls: ['./board.component.scss']
 })
 export class BoardComponent {
   constructor(private dataService: DataService) {
