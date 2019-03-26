@@ -9,6 +9,8 @@ import { MatButtonModule, MatCheckboxModule, MatSidenavModule, MatToolbarModule,
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HelloComponent } from './hello/hello.component';
 import { BoardComponent } from './board/board.component';
+
+import {AppRouters} from './app.routes';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,8 @@ import { BoardComponent } from './board/board.component';
     MatToolbarModule,
     MatIconModule,
     MatListModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AppRouters
   ],
   providers: [],
   bootstrap: [AppComponent]

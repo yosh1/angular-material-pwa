@@ -122,10 +122,116 @@ $ ng g c board --module app.module
 
 ```
 <div style="text-align:center">
-  <h1>Angular Content Management System</h1>
+  <h1>Hi!</h1>
   <p>
-    This is a platform for technical writers to manage their blog post contents related to angular.
-    <br> Click on Login to get Started!!!
+    This is the HelloComponent!
   </p>
 </div>
+```
+
+### ルートを作成
+
+複数のコンポーネントにアクセスできるように、ルートを定義する必要がある。
+
+`src/app` に `app.routes.ts` を作成し、
+
+```
+import { NgModule} from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { HelloComponent } from './hello/hello.component';
+import { BoardComponent } from './board/board.component';
+
+const routes: Routes = [
+  {path: '', component: HelloComponent},
+  {path: 'board', component: BoardComponent}
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRouters {}
+```
+
+を追加する。
+
+ここでは`HelloComponent`,`BoardComponent`を定義している。
+
+これにより、`http://localhost:4200`にアクセスすると`HelloComponent`を表示し、`http://localhost:4200/board`にアクセスすると`BoardComponent`を表示する。
+
+### `app.component.html` からコンポーネントへのリンクを追加
+
+```
+<mat-sidenav-container>
+  <mat-sidenav  #sidenav role="navigation">
+   <mat-nav-list>
+    <a mat-list-item>
+      <mat-icon class="icon">input</mat-icon>
+      <span class="label">Login</span>
+    </a>
+    <a mat-list-item
+        routerLink="/">
+      <mat-icon class="icon">home</mat-icon>
+        <span class="label">Home</span>
+    </a>
+    <a mat-list-item
+      routerLink="/dashboard">
+      <mat-icon class="icon">dashboard</mat-icon>
+      <span class="label">Dashboard</span>
+    </a>
+    <a  mat-list-item
+        type="button">
+      <mat-icon class="icon">input</mat-icon>
+      <span class="label">LogOut</span>
+    </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+     <div fxHide.gt-xs>
+       <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+     <div>
+       <a routerLink="/">
+          Material Blog
+       </a>
+     </div>
+     <div fxFlex fxLayout fxLayoutAlign="flex-end"  fxHide.xs>
+        <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+            <li>
+                <a>
+                  <mat-icon class="icon">input</mat-icon>
+                  <span  class="label">Login</span>
+                 </a>
+            </li>
+            <li>
+              <a
+                routerLink="/">
+                  <mat-icon class="icon">home</mat-icon>
+                  <span class="label">Home</span>
+              </a>
+            </li>
+            <li>
+                <a
+                  routerLink="/dashboard">
+                    <mat-icon class="icon">dashboard</mat-icon>
+                    <span class="label">Dashboard</span>
+                </a>
+              </li>
+            <li>
+                <a>
+                  <mat-icon class="icon">input</mat-icon>
+                  <span class="label">LogOut</span>
+                 </a>
+            </li>
+        </ul>
+     </div>
+    </mat-toolbar>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 ```
