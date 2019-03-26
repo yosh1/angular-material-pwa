@@ -30,7 +30,7 @@ $ npm install --save @angular/material \
 
 ```
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatSidenavModule, MatToolbarModule, MatIconModule, MatListModule } from '@angular/material';
 ```
 
 BrowserAnimationModule,
@@ -40,7 +40,11 @@ ngModuleには
 ```
 BrowserAnimationsModule,
 MatButtonModule,
-MatCheckboxModule
+MatCheckboxModule,
+MatSidenavModule,
+MatToolbarModule,
+MatIconModule,
+MatListModule
 ```
 
 を追加。
@@ -78,4 +82,10 @@ import 'hammerjs';
 
 ```:CSS
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+```
+
+### Angular Flexboxを追加
+
+```
+$ npm install @angular/flex-layout rxjs-compat @angular/compiler@7.2.10 ajv@^6.9.1
 ```
