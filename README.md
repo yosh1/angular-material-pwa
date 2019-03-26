@@ -20,8 +20,8 @@ $ cd {project_name}
 
 ```
 $ npm install --save @angular/material \
-@angular/cdk \
-@angular/animations
+                     @angular/cdk \
+                     @angular/animations
 ```
 
 ### Angular Materialをインポート
