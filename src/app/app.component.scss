@@ -1,28 +1,24 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-body,html {
-    margin: 0;
-    padding: 0;
-  }
-
-  mat-sidenav-container, mat-sidenav-content, mat-sidenav {
-    height: 100%;
-  }
-  
   mat-sidenav {
     width: 250px;
+    height: 100%;
+    &-container, &-content {
+    height: 100%;
   }
+}
+  
   
   a {
     text-decoration: none;
     color: white;
+    &:hover,
+    &:active {
+      color: lightgray;
+    }  
   }
   
-  a:hover,
-  a:active {
-    color: lightgray;
-  }
-  
+
   .navigation-items {
     list-style: none;
     padding: 0;

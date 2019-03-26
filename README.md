@@ -89,3 +89,29 @@ import 'hammerjs';
 ```
 $ npm install @angular/flex-layout rxjs-compat @angular/compiler@7.2.10 ajv@^6.9.1
 ```
+
+### Angular Flexboxを読み込み
+
+### Normalize.cssをインストール
+
+```
+$ npm install normalize.css
+```
+
+### Normalize.cssを読み込み
+`angular.json`の`styles`で`style.scss`を読み込んでいる部分の上に
+
+```
+"node_modules/normalize.css/normalize.css"
+```
+を追加。
+
+
+### コンポーネントを作成
+
+コンポーネント `HelloComponent` と `BoardComponent` をアプリケーションに定義する。
+
+```
+$ ng g c hello --module app.module
+$ ng g c board --module app.module
+```
