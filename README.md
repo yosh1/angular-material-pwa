@@ -122,10 +122,54 @@ $ ng g c board --module app.module
 
 ```
 <div style="text-align:center">
-  <h1>Angular Content Management System</h1>
+  <h1>Hi!</h1>
   <p>
-    This is a platform for technical writers to manage their blog post contents related to angular.
-    <br> Click on Login to get Started!!!
+    This is the HelloComponent!
   </p>
 </div>
 ```
+
+### ルートを作成
+
+複数のコンポーネントにアクセスできるように、ルートを定義する必要がある。
+
+`src/app` に `app.routes.ts` を作成し、
+
+```
+import { NgModule} from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { HelloComponent } from './hello/hello.component';
+import { BoardComponent } from './board/board.component';
+
+const routes: Routes = [
+  {path: '', component: HelloComponent},
+  {path: 'board', component: BoardComponent}
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRouters {}
+```
+
+を追加する。
+
+ここでは`HelloComponent`,`BoardComponent`を定義している。
+
+これにより、`http://localhost:4200`にアクセスすると`HelloComponent`を表示し、`http://localhost:4200/board`にアクセスすると`BoardComponent`を表示する。
+
+### `app.component.html` からコンポーネントへのリンクを追加する。
+
+該当アイテムに対して `routerLink="/"`、`routerLink="/board"`を追加。
+
+### AppRouterをインポート
+
+`app.module.ts` に
+
+```
+import {AppRouters} from './app.routes';
+```
+
+を。importsに`AppRouters`を追加する。
+
